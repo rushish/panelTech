@@ -1,0 +1,55 @@
+.form-wrapper {
+    max-width: 50%;
+    height: 100%;
+    margin: auto;
+}
+
+.add-clients {
+    color: white;
+    height: 100%;
+    text-align: center;
+    height: fit-content;
+    padding: 1rem 0;
+    background-color: #333333;
+    margin: 2rem auto;
+
+}
+
+label {
+    width: 80%;
+    text-align: left;
+    margin: 5px auto;
+    line-height: 2em;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    text-indent: 10px;
+}
+
+.form-title {
+    width: 80%;
+    text-align: left;
+    font-weight: bold;
+    margin: 1rem auto;
+}
+
+.addcli-btn {
+    width: 50%;
+    margin: auto;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.5rem 2rem;
+    margin-top: 2rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.addcli-btn:hover {
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    transition: 0.3s;
+}

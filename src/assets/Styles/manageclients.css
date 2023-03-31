@@ -1,0 +1,38 @@
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border: 1px solid black;
+}
+
+td,
+th {
+    padding: 10px;
+}
+
+input {
+    width: 100%;
+}
+
+.quotation-details {
+    width: 80%;
+    margin: 5rem auto;
+}
+
+.quotation-form {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+.quotation-btn {
+    display: block;
+    width: 50%;
+    margin: 2rem auto;
+}
+
+.form-title {
+    text-align: left;
+}
