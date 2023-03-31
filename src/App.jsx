@@ -3,6 +3,7 @@ import Navbar from './Components/Navbar'
 import Home from './Pages/Home'
 import AddClients from './Pages/AddClients'
 import ManageClients from './Pages/ManageClients'
+import CreateQuotation from './Pages/CreateQuotation'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 
@@ -16,6 +17,7 @@ function App() {
           <Route element={<Home />} exact path="/"></Route>
           <Route element={<AddClients />} path="/add-clients"></Route>
           <Route element={<ManageClients />} path="/manage-clients"></Route>
+          <Route element={<CreateQuotation />} path="/create-quotation"></Route>
         </Routes>
       </BrowserRouter>
     </>
