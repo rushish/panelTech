@@ -14,8 +14,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <ManageClients />
-      {/* <Slider />
+      <Slider />
+      <Home />
+      {/* <ManageClients />
       <AddClients /> */}
     </>
 
