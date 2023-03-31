@@ -1,4 +1,5 @@
 import "../assets/Styles/navbar.css";
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
     return (
@@ -11,7 +12,7 @@ const Navbar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <a className="nav-link" href="#">Home</a>
+                            <a className="nav-link" href="/">Home</a>
                             <a className="nav-link" href="#">Admin Login</a>
 
                         </div>

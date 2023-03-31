@@ -1,12 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './Components/Navbar'
-import Slider from './Components/Slider'
 import Home from './Pages/Home'
 import AddClients from './Pages/AddClients'
 import ManageClients from './Pages/ManageClients'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 
 function App() {
@@ -14,10 +11,13 @@ function App() {
   return (
     <>
       <Navbar />
-      <Slider />
-      <Home />
-      {/* <ManageClients />
-      <AddClients /> */}
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Home />} exact path="/"></Route>
+          <Route element={<AddClients />} path="/add-clients"></Route>
+          <Route element={<ManageClients />} path="/manage-clients"></Route>
+        </Routes>
+      </BrowserRouter>
     </>
 
   )
