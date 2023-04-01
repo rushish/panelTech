@@ -8,7 +8,8 @@ function AddQuot() {
         hsn_code: '',
         unit_price: '',
         item_description: '',
-        delete_item: ''
+        delete_item: '',
+        itemId: 1,
     });
 
     const handleChange = (event) => {
@@ -20,10 +21,10 @@ function AddQuot() {
         const itemFormData = JSON.parse(localStorage.getItem('itemFormData')) || [];
         itemFormData.push(formData);
         localStorage.setItem('itemFormData', JSON.stringify(itemFormData));
-        console.log(localStorage.getItem("itemFormData"))
+        location.reload();
     };
 
-    const formDataArray = JSON.parse(localStorage.getItem('itemFormData')) || [];
+    const itemDataArray = JSON.parse(localStorage.getItem('itemFormData')) || [];
 
     return (
         <form className='quot'>
@@ -93,23 +94,13 @@ function AddQuot() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>DEmo</td>
-                        <td>DEmo</td>
-                        <td>DEmo</td>
-                        <td>DEmo</td>
-                        <td>DEmo</td>
-                        <td>DEmo</td>
-                        <td>DEmo</td>
-                        <td>DEmo</td>
-                    </tr>
-                    {formDataArray.map((itemData, index) => (
+                    {itemDataArray.map((itemData, index) => (
                         <tr key={index}>
                             <td>{itemData.item_description}</td>
                             <td>{itemData.item_description}</td>
                             <td>{itemData.model_no}</td>
                             <td>{itemData.hsn_code}</td>
-                            <td>{itemData.item_id}</td>
+                            <td>{itemData.item_id + 1}</td>
                             <td>{itemData.item_description}</td>
                             <td>{itemData.item_description}</td>
                             <td>{itemData.item_description}</td>

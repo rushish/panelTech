@@ -21,7 +21,7 @@ function Form() {
     };
 
     return (
-        <form className='quot-form' onSubmit={handleSubmit}>
+        <form className='' onSubmit={handleSubmit}>
             <label>
                 Customer Enquiry no.:
                 <input type="number" name='enquiryno' value={formData.enquiryno} onChange={handleChange} />
