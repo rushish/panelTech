@@ -1,23 +1,21 @@
 import React from 'react';
 
 function Table() {
-    const formDataArray = JSON.parse(localStorage.getItem('quotationFormData')) || [];
+    const formDataArray = JSON.parse(localStorage.getItem('addClient')) || [];
 
     return (
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Message</th>
+                    <th>Company Name</th>
+                    <th>Create Quotation</th>
                 </tr>
             </thead>
             <tbody>
-                {formDataArray.map((formData, index) => (
+                {formDataArray.map((quotationData, index) => (
                     <tr key={index}>
-                        <td>{quotationData.name}</td>
-                        <td>{quotationData.email}</td>
-                        <td>{quotationData.message}</td>
+                        <td>{quotationData.companyName}</td>
+                        <td className='button-wrap'><button className='create-quote'>Create Quotation</button></td>
                     </tr>
                 ))}
             </tbody>

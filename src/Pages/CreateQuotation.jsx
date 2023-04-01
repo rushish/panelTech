@@ -4,7 +4,7 @@ import Form from "../Forms/QuotationForm";
 function CreateQuotation() {
     return (
         <div>
-            <h2>Form</h2>
+            <h2>Create Quotation</h2>
             <Form />
         </div>
     );

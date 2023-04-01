@@ -2,56 +2,66 @@ import "../assets/Styles/addclients.css"
 import { useState } from "react";
 
 const AddClients = () => {
-    const [companyName, setcompanyName] = useState('');
-    const [addressline1, setaddressline1] = useState('');
-    const [addressline2, setaddressline2] = useState('');
-    const [addressline3, setaddressline3] = useState('');
-    const [phoneNumber, setphoneNumber] = useState('');
-    const [kindattn, setkindattn] = useState('');
-    const [email, setemail] = useState('');
-    const [faxno, setfaxno] = useState('');
+    const [addClients, setFormData] = useState({
+        companyName: '',
+        addressline1: '',
+        addressline2: '',
+        addressline3: '',
+        phoneNumber: '',
+        kindattn: '',
+        email: '',
+        faxno: '',
+    });
+
+    const handleChange = (event) => {
+        setFormData({ ...addClients, [event.target.name]: event.target.value });
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        const formData = {
-            companyName,
-            addressline1,
-            addressline2,
-            addressline3,
-            phoneNumber,
-            kindattn,
-            email,
-            faxno
-        };
-        formData.push({
-            companyName,
-            addressline1,
-            addressline2,
-            addressline3,
-            phoneNumber,
-            kindattn,
-            email,
-            faxno
-        });
-        localStorage.setItem('formData', JSON.stringify(formData));
+        const addClient = JSON.parse(localStorage.getItem('addClient')) || [];
+        addClient.push(addClients);
+        localStorage.setItem('addClient', JSON.stringify(addClient));
         window.location.href = "/"
-    }
-
+    };
 
     return (
         <div className="form-wrapper">
             <form onSubmit={handleSubmit} className="add-clients">
                 <h3 className="form-title">Add Client</h3>
-                <label>Company Name<br></br><input type="text" value={companyName} onChange={(event) => setcompanyName(event.target.value)} /></label><br />
-                <label>Address Line 1<br></br><input type="text" value={addressline1} onChange={(event) => setaddressline1(event.target.value)} /></label><br />
-                <label>Address Line 2<br></br><input type="text" value={addressline2} onChange={(event) => setaddressline2(event.target.value)} /></label><br />
-                <label>Address Line 3<br></br><input type="text" value={addressline3} onChange={(event) => setaddressline3(event.target.value)} /></label><br />
-                <label>Phone No.<br></br><input type="tel" value={phoneNumber} onChange={(event) => setphoneNumber(event.target.value)} /></label><br />
-                <label>Kind Attn.<br></br><input type="text" value={kindattn} onChange={(event) => setkindattn(event.target.value)} /></label><br />
-                <label>Email<br></br><input type="email" value={email} onChange={(event) => setemail(event.target.value)} /></label><br />
-                <label>Fax No.<br></br><input type="number" value={faxno} onChange={(event) => setfaxno(event.target.value)} /></label><br />
-                <input className="addcli-btn" type="submit" value="ADD" />
+                <label>
+                    Company Name :
+                    <input type="number" name='companyName' value={addClients.companyName} onChange={handleChange} />
+                </label>
+                <label>
+                    Addressline 2 :
+                    <input type="date" name='addressline1' value={addClients.addressline1} onChange={handleChange} />
+                </label>
+                <label>
+                    Addressline 2 :
+                    <input type='text' name='addressline2' value={addClients.addressline2} onChange={handleChange} />
+                </label>
+                <label>
+                    Addressline 3 :
+                    <input type="tel" name='addressline3' value={addClients.addressline3} onChange={handleChange} />
+                </label>
+                <label>
+                    Phone No :
+                    <input type="email" name='phoneNumber' value={addClients.phoneNumber} onChange={handleChange} />
+                </label>
+                <label>
+                    Kind Attn :
+                    <input type="email" name='kindattn' value={addClients.kindattn} onChange={handleChange} />
+                </label>
+                <label>
+                    Email :
+                    <input type="email" name='email' value={addClients.email} onChange={handleChange} />
+                </label>
+                <label>
+                    Fax No :
+                    <input type="email" name='faxno' value={addClients.faxno} onChange={handleChange} />
+                </label>
+                <button type="submit">Submit</button>
             </form>
         </div>
     );

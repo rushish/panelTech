@@ -1,10 +1,11 @@
 import React from 'react';
 import Table from '../Forms/QuotationTable';
+import "../assets/Styles/manageclients.css"
 
 function ManageClients() {
     return (
-        <div>
-            <h2>Form Data</h2>
+        <div className='wrapper'>
+            <h2 className='title'>Manage Clients</h2>
             <Table />
         </div>
     );

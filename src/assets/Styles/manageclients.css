@@ -4,12 +4,22 @@ tfoot,
 th,
 thead,
 tr {
-    border: 1px solid black;
+    border: 1px solid #cecece;
+}
+
+table {
+    width: 100%;
 }
 
 td,
 th {
     padding: 10px;
+    width: 70%;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 3rem auto;
 }
 
 input {
@@ -33,6 +43,26 @@ input {
     margin: 2rem auto;
 }
 
-.form-title {
-    text-align: left;
+.title {
+    text-align: left !important;
+    margin: 1rem auto;
+}
+
+.create-quote {
+    font-weight: 400;
+    background-color: #31D2F2;
+    border: none;
+    padding: 10px 15px;
+    margin: auto;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.create-quote:hover {
+    background-color: #24a5be;
+    transition: 0.3s;
+}
+
+.button-wrap {
+    text-align: center;
 }

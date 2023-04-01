@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function Form() {
-    const [quotationData, setquotationData] = useState({
+    const [formData, setFormData] = useState({
         enquiryno: '',
         enquirydate: '',
         contactperson: '',
@@ -10,37 +10,37 @@ function Form() {
     });
 
     const handleChange = (event) => {
-        setquotationData({ ...quotationData, [event.target.name]: event.target.value });
+        setFormData({ ...formData, [event.target.name]: event.target.value });
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const quotationquotationData = JSON.parse(localStorage.getItem('quotationquotationData')) || [];
-        quotationquotationData.push(quotationData);
-        localStorage.setItem('quotationquotationData', JSON.stringify(quotationquotationData));
+        const quotationFormData = JSON.parse(localStorage.getItem('quotationFormData')) || [];
+        quotationFormData.push(formData);
+        localStorage.setItem('quotationFormData', JSON.stringify(quotationFormData));
     };
 
     return (
         <form onSubmit={handleSubmit}>
             <label>
                 Customer Enquiry no.:
-                <input type="text" name="name" value={quotationData.name} onChange={handleChange} />
+                <input type="number" name='enquiryno' value={formData.enquiryno} onChange={handleChange} />
             </label>
             <label>
                 Enquiry Date:
-                <input type="date" name="email" value={quotationData.email} onChange={handleChange} />
+                <input type="date" name='enquirydate' value={formData.enquirydate} onChange={handleChange} />
             </label>
             <label>
                 Contact person:
-                <input type='text' name="message" value={quotationData.message} onChange={handleChange} />
+                <input type='text' name='contactperson' value={formData.contactperson} onChange={handleChange} />
             </label>
             <label>
                 Contact person Phone no.:
-                <input type='number' name="message" value={quotationData.message} onChange={handleChange} />
+                <input type="tel" name='contactpersonphone' value={formData.contactpersonphone} onChange={handleChange} />
             </label>
             <label>
                 Contact Person Email:
-                <input type='email' name="message" value={quotationData.message} onChange={handleChange} />
+                <input type="email" name='contactpersonemail' value={formData.contactpersonemail} onChange={handleChange} />
             </label>
             <button type="submit">Submit</button>
         </form>
