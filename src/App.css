@@ -26,7 +26,8 @@
    text-decoration: none !important;
  }
 
- * a:hover {
+ * a:hover,
+ a:focus {
    color: #ea2e2e !important;
  }
 

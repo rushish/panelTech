@@ -1,55 +1,27 @@
-import React from 'react'
-import { useState } from 'react';
+import React from 'react';
+import { Link } from "react-router-dom"
 
-const NotesAdd = () => {
-  const [notesData, setNotesData] = useState({
-    srno: '',
-    notes: '',
-  });
+function Table() {
+  const formDataArray = JSON.parse(localStorage.getItem('addClient')) || [];
 
-  const handleChange = (event) => {
-    setFormData({ ...notesData, [event.target.name]: event.target.value });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const itemFormData = JSON.parse(localStorage.getItem('itemFormData')) || [];
-    itemFormData.push(formData);
-    localStorage.setItem('itemFormData', JSON.stringify(itemFormData));
-    location.reload();
-  };
-
-  const itemDataArray = JSON.parse(localStorage.getItem('itemFormData')) || [];
   return (
-    <>
-      <div>
-        <h1>Notes and Deviation</h1>
-        <form action="">
-          <textarea name="notes" ></textarea>
-          <button className='add-note'>Add Notes</button>
-          <button className='undo-note'>UNDO</button>
-        </form>
-      </div>
-      <div className='table-wrapper'>
-        <table>
-          <thead>
-            <tr>
-              <th>Sr No.</th>
-              <th>Notes and Deviations</th>
-            </tr>
-          </thead>
-          <tbody>
-            {notesDataArray.map((notesData, index) => (
-              <tr key={index}>
-                <td>{notesData.item_description}</td>
-                <td>{notesData.item_description}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </>
-  )
+    <table>
+      <thead>
+        <tr>
+          <th>Sr No.</th>
+          <th>Notes and Deviatation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {formDataArray.map((quotationData, index) => (
+          <tr key={index}>
+            <td>{quotationData.companyName}</td>
+            <td className='button-wrap'><Link to="/create-quotation"><button className='create-quote'>Create Quotation</button></Link></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 }
 
-export default NotesAdd
+export default Table;

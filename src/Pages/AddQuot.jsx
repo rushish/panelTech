@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "../assets/Styles/addQuot.css"
+import { Link } from 'react-router-dom';
 
 function AddQuot() {
     const [formData, setFormData] = useState({
@@ -100,7 +101,7 @@ function AddQuot() {
                             <td>{itemData.item_description}</td>
                             <td>{itemData.model_no}</td>
                             <td>{itemData.hsn_code}</td>
-                            <td>{itemData.item_id + 1}</td>
+                            <td>{itemData.item_id}</td>
                             <td>{itemData.item_description}</td>
                             <td>{itemData.item_description}</td>
                             <td>{itemData.item_description}</td>
@@ -108,6 +109,7 @@ function AddQuot() {
                     ))}
                 </tbody>
             </table>
+            <Link to="/notes-add"><button>Proceed Next to Add Notes and Deviation</button></Link>
         </form>
     );
 }
