@@ -22,6 +22,10 @@
    -moz-appearance: textfield;
  }
 
+ * a {
+   text-decoration: none !important;
+ }
+
  * a:hover {
    color: #ea2e2e !important;
  }

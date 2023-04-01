@@ -5,8 +5,8 @@ import AddClients from './Pages/AddClients'
 import ManageClients from './Pages/ManageClients'
 import CreateQuotation from './Pages/CreateQuotation'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import AddQuot from './Forms/AddQuot'
 import NotesAdd from './Pages/NotesAdd'
+import AddQuot from './Pages/AddQuot'
 
 
 function App() {

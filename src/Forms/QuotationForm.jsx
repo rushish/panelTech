@@ -18,10 +18,11 @@ function Form() {
         const quotationFormData = JSON.parse(localStorage.getItem('quotationFormData')) || [];
         quotationFormData.push(formData);
         localStorage.setItem('quotationFormData', JSON.stringify(quotationFormData));
+        window.location.href = "/add-quotation"
     };
 
     return (
-        <form className='' onSubmit={handleSubmit}>
+        <form className='quot-form' onSubmit={handleSubmit}>
             <label>
                 Customer Enquiry no.:
                 <input type="number" name='enquiryno' value={formData.enquiryno} onChange={handleChange} />
