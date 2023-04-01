@@ -3,8 +3,27 @@
    background-color: #F5F5F5 !important;
  }
 
+ input[type=submit],
+ input[type=button],
+ button {
+   background-color: black;
+   color: white;
+ }
+
+ /* Chrome, Safari, Edge, Opera */
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
+
+ /* Firefox */
+ input[type=number] {
+   -moz-appearance: textfield;
+ }
+
  * a:hover {
-   color: red !important;
+   color: #ea2e2e !important;
  }
 
  .bg-body-tertiary {

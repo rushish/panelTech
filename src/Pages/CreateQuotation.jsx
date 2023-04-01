@@ -3,7 +3,7 @@ import Form from "../Forms/QuotationForm";
 
 function CreateQuotation() {
     return (
-        <div>
+        <div className='quot-wrapper'>
             <h2>Create Quotation</h2>
             <Form />
         </div>

@@ -61,6 +61,7 @@ const AddClients = () => {
                     Fax No :
                     <input type="number" name='faxno' value={addClients.faxno} onChange={handleChange} />
                 </label>
+                <br />
                 <button type="submit">Submit</button>
             </form>
         </div>

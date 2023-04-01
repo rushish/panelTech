@@ -21,7 +21,7 @@ function Form() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='quot-form' onSubmit={handleSubmit}>
             <label>
                 Customer Enquiry no.:
                 <input type="number" name='enquiryno' value={formData.enquiryno} onChange={handleChange} />
@@ -42,6 +42,7 @@ function Form() {
                 Contact Person Email:
                 <input type="email" name='contactpersonemail' value={formData.contactpersonemail} onChange={handleChange} />
             </label>
+            <br />
             <button type="submit">Submit</button>
         </form>
     );
