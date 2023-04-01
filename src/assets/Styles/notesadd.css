@@ -1,5 +1,22 @@
-.bodywrap {
+.content-wrap {
     width: 80%;
     margin: auto;
     margin-top: 5rem;
+}
+
+.note-button {
+    width: 100%;
+    margin: 1rem auto;
+}
+
+.notes-add {
+    width: 30%;
+    margin: 0 auto !important;
+    margin-top: 0;
+}
+
+.notesarea {
+    height: 100px;
+    padding: 15px;
+    resize: none;
 }

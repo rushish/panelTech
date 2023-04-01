@@ -1,34 +1,53 @@
-import React from 'react';
-import { Link } from "react-router-dom"
+import React, { useState } from 'react';
 import "../assets/Styles/notesadd.css"
 
-function Table() {
-  const formDataArray = JSON.parse(localStorage.getItem('addClient')) || [];
+function NotesAdd() {
+  const [notes, setNotes] = useState([]);
+  const [noteText, setNoteText] = useState('');
+
+  const addNote = () => {
+    if (noteText.trim() !== '') {
+      setNotes([...notes, noteText.trim()]);
+      setNoteText('');
+    }
+  };
+
+  const deleteNote = (note) => {
+    setNotes(notes.filter((n) => n !== note));
+  };
 
   return (
-    <div className='bodywrap'>
-      <h1>Notes And Deviations</h1>
-      <textarea name="notesarea"></textarea>
-      <div className='table-wrap'>
-        <table>
-          <thead>
-            <tr>
-              <th>Sr No.</th>
-              <th>Notes and Deviatation</th>
-            </tr>
-          </thead>
-          <tbody>
-            {formDataArray.map((quotationData, index) => (
-              <tr key={index}>
-                <td>{quotationData.companyName}</td>
-                <td>{quotationData.phoneNumber}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className='content-wrap'>
+      <h1>Notes and Deviation</h1>
+      <div>
+        <textarea
+          className='notesarea'
+          placeholder="Add a note..."
+          value={noteText}
+          onChange={(e) => setNoteText(e.target.value)}
+        />
+        <button className='note-button' onClick={addNote}>Add</button>
       </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Note</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {notes.map((note) => (
+            <tr key={note}>
+              <td>{note}</td>
+              <td>
+                <button className='note-add' onClick={() => deleteNote(note)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
 
-export default Table;
+export default NotesAdd;
