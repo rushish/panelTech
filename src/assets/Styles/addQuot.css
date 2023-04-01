@@ -1,0 +1,29 @@
+.quot {
+    width: 80%;
+    margin: 2rem auto;
+    background-color: white;
+}
+
+textarea {
+    resize: vertical;
+    width: 100%;
+}
+
+.add-item {
+    display: block !important;
+}
+
+.add {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.add section {
+    width: 50%;
+}
+
+.flex-section {
+    display: flex;
+    gap: 1rem;
+}
