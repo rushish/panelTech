@@ -6,6 +6,7 @@ import ManageClients from './Pages/ManageClients'
 import CreateQuotation from './Pages/CreateQuotation'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AddQuot from './Forms/AddQuot'
+import NotesAdd from './Pages/NotesAdd'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route element={<ManageClients />} path="/manage-clients"></Route>
           <Route element={<CreateQuotation />} path="/create-quotation"></Route>
           <Route element={<AddQuot />} path="/add-quotation"></Route>
+          <Route element={<NotesAdd />} path="/notes-add"></Route>
         </Routes>
       </BrowserRouter>
     </>
