@@ -21,7 +21,7 @@ function Table() {
             {formDataArray.map((quotationData, index) => (
               <tr key={index}>
                 <td>{quotationData.companyName}</td>
-                <td className='button-wrap'><Link to="/create-quotation"><button className='create-quote'>Create Quotation</button></Link></td>
+                <td>{quotationData.companyName}</td>
               </tr>
             ))}
           </tbody>
