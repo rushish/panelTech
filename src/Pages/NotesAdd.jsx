@@ -21,7 +21,7 @@ function Table() {
             {formDataArray.map((quotationData, index) => (
               <tr key={index}>
                 <td>{quotationData.companyName}</td>
-                <td>{quotationData.companyName}</td>
+                <td>{quotationData.phoneNumber}</td>
               </tr>
             ))}
           </tbody>
