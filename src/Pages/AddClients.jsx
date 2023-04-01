@@ -31,7 +31,7 @@ const AddClients = () => {
                 <h3 className="form-title">Add Client</h3>
                 <label>
                     Company Name :
-                    <input type="number" name='companyName' value={addClients.companyName} onChange={handleChange} />
+                    <input type="text" name='companyName' value={addClients.companyName} onChange={handleChange} />
                 </label>
                 <label>
                     Addressline 2 :
@@ -43,15 +43,15 @@ const AddClients = () => {
                 </label>
                 <label>
                     Addressline 3 :
-                    <input type="tel" name='addressline3' value={addClients.addressline3} onChange={handleChange} />
+                    <input type="text" name='addressline3' value={addClients.addressline3} onChange={handleChange} />
                 </label>
                 <label>
                     Phone No :
-                    <input type="email" name='phoneNumber' value={addClients.phoneNumber} onChange={handleChange} />
+                    <input type="number" name='phoneNumber' value={addClients.phoneNumber} onChange={handleChange} />
                 </label>
                 <label>
                     Kind Attn :
-                    <input type="email" name='kindattn' value={addClients.kindattn} onChange={handleChange} />
+                    <input type="text" name='kindattn' value={addClients.kindattn} onChange={handleChange} />
                 </label>
                 <label>
                     Email :
@@ -59,7 +59,7 @@ const AddClients = () => {
                 </label>
                 <label>
                     Fax No :
-                    <input type="email" name='faxno' value={addClients.faxno} onChange={handleChange} />
+                    <input type="number" name='faxno' value={addClients.faxno} onChange={handleChange} />
                 </label>
                 <button type="submit">Submit</button>
             </form>
