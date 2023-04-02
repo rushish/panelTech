@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../assets/Styles/addQuot.css";
 import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
 function AddQuot() {
-  let { id } = useParams();
-  useEffect(() => {
-    console.log(id);
-  }, []);
-
+  const { id } = useParams();
   const [formData, setFormData] = useState({
     model_no: "",
     quantity: "",
@@ -17,6 +14,8 @@ function AddQuot() {
     delete_item: "",
     itemId: 1,
   });
+  const [quotationId, setQuotationId] = useState("");
+  const [clientid, setClientid] = useState("");
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -27,10 +26,49 @@ function AddQuot() {
     const itemFormData = JSON.parse(localStorage.getItem("itemFormData")) || [];
     itemFormData.push(formData);
     localStorage.setItem("itemFormData", JSON.stringify(itemFormData));
-    location.reload();
+    // location.reload();
+
+    axios({
+      method: "post",
+      url: "http://localhost:8080/add-item",
+      data: {
+        model_no: formData.model_no,
+        hsn_code: formData.hsn_code,
+        quantity: formData.quantity,
+        unit_price: formData.unit_price,
+        item_description: formData.item_description,
+        client_id: clientid,
+        quotation_id: quotationId,
+        revised_no: 0,
+        revised_no_quotation: 0,
+      },
+    })
+      .then((resp) => {
+        console.log(resp);
+        navigate(`/add-quotation/${id}`);
+      })
+      .catch((err) => console.log(err));
   };
 
   const itemDataArray = JSON.parse(localStorage.getItem("itemFormData")) || [];
+
+  useEffect(() => {
+    console.log(id);
+    axios({
+      method: "post",
+      url: "http://localhost:8080/get-quotation-user",
+      data: {
+        client_id: id,
+      },
+    })
+      .then((resp) => {
+        console.log(resp);
+        setQuotationId(resp.data[0].id);
+        setClientid(resp.data[0].client_id);
+        console.log(quotationId);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <form className="quot">
