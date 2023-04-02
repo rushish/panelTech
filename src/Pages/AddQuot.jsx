@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../assets/Styles/addQuot.css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 function AddQuot() {
@@ -16,6 +16,9 @@ function AddQuot() {
   });
   const [quotationId, setQuotationId] = useState("");
   const [clientid, setClientid] = useState("");
+  const [itemsAdded, setItemsAdded] = useState([]);
+
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -45,12 +48,44 @@ function AddQuot() {
     })
       .then((resp) => {
         console.log(resp);
-        navigate(`/add-quotation/${id}`);
+        getItemsFromDatabase();
       })
       .catch((err) => console.log(err));
   };
 
   const itemDataArray = JSON.parse(localStorage.getItem("itemFormData")) || [];
+
+  const getItemsFromDatabase = () => {
+    axios({
+      method: "post",
+      url: "http://localhost:8080/get-item-quotation",
+      data: {
+        client_id: id,
+        quotation_id: quotationId,
+      },
+    })
+      .then((resp) => {
+        console.log(resp);
+        setItemsAdded(resp.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const deleteItemOnClick = (e) => {
+    e.preventDefault();
+    axios({
+      method: "post",
+      url: "http://localhost:8080/delete-item/id",
+      data: {
+        id: formData.delete_item,
+      },
+    })
+      .then((resp) => {
+        console.log(resp);
+        getItemsFromDatabase();
+      })
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
     console.log(id);
@@ -150,7 +185,9 @@ function AddQuot() {
                   value={formData.delete_item}
                   onChange={handleChange}
                 />
-                <button className="delete-item">Delete Item</button>
+                <button className="delete-item" onClick={deleteItemOnClick}>
+                  Delete Item
+                </button>
               </label>
             </td>
           </tr>
@@ -170,13 +207,13 @@ function AddQuot() {
           </tr>
         </thead>
         <tbody>
-          {itemDataArray.map((itemData, index) => (
+          {itemsAdded.map((itemData, index) => (
             <tr key={index}>
               <td>{itemData.item_description}</td>
               <td>{itemData.item_description}</td>
               <td>{itemData.model_no}</td>
               <td>{itemData.hsn_code}</td>
-              <td>{itemData.item_id}</td>
+              <td>{itemData.id}</td>
               <td>{itemData.item_description}</td>
               <td>{itemData.item_description}</td>
               <td>{itemData.item_description}</td>

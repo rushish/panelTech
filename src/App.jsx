@@ -22,7 +22,7 @@ function App() {
             path="/create-quotation/:id"
           ></Route>
           <Route element={<AddQuot />} path="/add-quotation/:id"></Route>
-          <Route element={<NotesAdd />} path="/notes-add"></Route>
+          <Route element={<NotesAdd />} path="/notes-add/:id"></Route>
         </Routes>
       </BrowserRouter>
     </>
