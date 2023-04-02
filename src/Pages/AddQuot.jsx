@@ -221,7 +221,7 @@ function AddQuot() {
           ))}
         </tbody>
       </table>
-      <Link to="/notes-add">
+      <Link to={`/notes-add/${id}`}>
         <button>Proceed Next to Add Notes and Deviation</button>
       </Link>
     </form>
