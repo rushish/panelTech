@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Table() {
   const [clientsData, setClientsData] = useState([]);
   const formDataArray = JSON.parse(localStorage.getItem("addClient")) || [];
+
+  const navigate = useNavigate();
 
   axios({
     method: "get",
@@ -19,6 +21,7 @@ function Table() {
   const createQuotation = (id) => {
     // e.preventDefault();
     console.log(id);
+    navigate(`/create-quotation/${id}`);
   };
 
   return (
