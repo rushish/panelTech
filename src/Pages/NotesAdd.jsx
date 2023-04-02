@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../assets/Styles/notesadd.css";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function NotesAdd() {
   const [notes, setNotes] = useState([]);
@@ -98,7 +98,7 @@ function NotesAdd() {
           Add
         </button>
       </div>
-      <table style={{ width: "80vw" }}>
+      <table style={{ marginBottom: "4rem" }}>
         <thead>
           <tr>
             <th>Note</th>
@@ -121,6 +121,9 @@ function NotesAdd() {
           ))}
         </tbody>
       </table>
+      <Link to={`/terms-conditions/${id}`} className="gototermsandcondition">
+        Proceed Next to Terms & Conditions
+      </Link>
     </div>
   );
 }

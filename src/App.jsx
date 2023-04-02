@@ -7,6 +7,7 @@ import CreateQuotation from "./Pages/CreateQuotation";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NotesAdd from "./Pages/NotesAdd";
 import AddQuot from "./Pages/AddQuot";
+import TermsAndConditionns from "./Pages/TermsAndConditionns";
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
           ></Route>
           <Route element={<AddQuot />} path="/add-quotation/:id"></Route>
           <Route element={<NotesAdd />} path="/notes-add/:id"></Route>
+          <Route
+            element={<TermsAndConditionns />}
+            path="/terms-conditions/:id"
+          ></Route>
         </Routes>
       </BrowserRouter>
     </>
