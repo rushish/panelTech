@@ -1,0 +1,73 @@
+.address1 {
+  padding-top: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.address-2 {
+  padding-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  font-size: 14px;
+}
+.alt-address {
+  padding-left: 45%;
+}
+.table {
+  padding-left: 10%;
+}
+.table2 {
+  border-color: grey;
+  border-collapse: collapse;
+}
+
+.table2,
+.t-head,
+.t-body {
+  border: 1px solid;
+}
+.price {
+  padding-left: 40px;
+}
+
+.span-1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.footer-1 {
+  padding-top: 15px;
+  color: rgb(49, 49, 145);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2,
+h3,
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+th {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.term-table,
+.term-data {
+  border: solid black 1px;
+  border-collapse: collapse;
+}
+.footer-2 {
+  padding-top: 70px;
+  color: rgb(18, 18, 134);
+}
+b,
+#add1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.term-heading {
+  padding-top: 30px;
+}
+.b-details {
+  padding-left: 70px;
+}
