@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../assets/Styles/termsandconditions.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const TermsAndConditionns = () => {
@@ -37,6 +37,8 @@ const TermsAndConditionns = () => {
 
   const { id } = useParams();
 
+  const navigate = useNavigate();
+
   const termsandconditionsdone = (e) => {
     e.preventDefault();
 
@@ -67,6 +69,7 @@ const TermsAndConditionns = () => {
         .then((resp) => {
           console.log(resp);
           alert("Done !!!!");
+          navigate(`/original-print/${id}`);
         })
         .catch((err) => console.log(err));
     } else {

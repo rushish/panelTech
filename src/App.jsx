@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NotesAdd from "./Pages/NotesAdd";
 import AddQuot from "./Pages/AddQuot";
 import TermsAndConditionns from "./Pages/TermsAndConditionns";
+import OriginalPrint from "./Pages/OriginalPrint";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             element={<TermsAndConditionns />}
             path="/terms-conditions/:id"
           ></Route>
+          <Route element={<OriginalPrint />} path="/original-print/:id"></Route>
         </Routes>
       </BrowserRouter>
     </>
