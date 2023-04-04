@@ -1,0 +1,26 @@
+#termsandconsition_inner_wrapper {
+  width: 70vw;
+  text-align: center;
+  background-color: #ddd906;
+  border: 2px solid #000;
+  border-radius: 4px;
+  padding: 1rem 1rem;
+}
+
+#termsandcondition_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#termsandconsition_inner_wrapper form,
+#termsandconsition_inner_wrapper label {
+  font-weight: bold;
+}
+
+#termsandconsition_inner_wrapper textarea {
+  border: 1px solid #000;
+  border-radius: 2px;
+  color: #000;
+  font-weight: bold;
+}
