@@ -67,6 +67,7 @@ const TermsAndConditionns = () => {
         .then((resp) => {
           console.log(resp);
           alert("Done !!!!");
+          window.location.href = "/"
         })
         .catch((err) => console.log(err));
     } else {
