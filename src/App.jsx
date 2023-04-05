@@ -11,6 +11,7 @@ import TermsAndConditionns from "./Pages/TermsAndConditionns";
 import OriginalRevise from "./Pages/OriginalRevise";
 import Revised from "./Pages/Revised";
 import Invoices from "./Pages/invoices";
+import Reports from "./Pages/reports";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route element={<OriginalRevise />} path="/original"></Route>
           <Route element={<Revised />} path="/revised"></Route>
           <Route element={<Invoices />} path="/invoices"></Route>
+          <Route element={<Reports />} path="/reports"></Route>
         </Routes>
       </BrowserRouter>
     </>
