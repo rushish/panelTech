@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "../assets/Styles/original.css"
 import { BsPencilSquare } from "react-icons/bs"
 
-function OriginalRevise() {
+function Revised() {
 
     let { id } = useParams();
 
@@ -154,4 +154,4 @@ function OriginalRevise() {
     );
 }
 
-export default OriginalRevise;
+export default Revised;

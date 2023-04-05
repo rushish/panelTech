@@ -9,6 +9,8 @@ import NotesAdd from "./Pages/NotesAdd";
 import AddQuot from "./Pages/AddQuot";
 import TermsAndConditionns from "./Pages/TermsAndConditionns";
 import OriginalRevise from "./Pages/OriginalRevise";
+import Revised from "./Pages/Revised";
+import Invoices from "./Pages/invoices";
 
 function App() {
   return (
@@ -29,7 +31,9 @@ function App() {
             element={<TermsAndConditionns />}
             path="/terms-conditions/:id"
           ></Route>
-          <Route element={<OriginalRevise />} path="original"></Route>
+          <Route element={<OriginalRevise />} path="/original"></Route>
+          <Route element={<Revised />} path="/revised"></Route>
+          <Route element={<Invoices />} path="/invoices"></Route>
         </Routes>
       </BrowserRouter>
     </>
