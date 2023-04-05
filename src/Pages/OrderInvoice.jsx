@@ -114,7 +114,7 @@ const OrderInvoice = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className="invoice-wrap">
       <img src={panelImg} alt="" align="right" width="70px" />
 
       <div className="address1">
