@@ -17,6 +17,7 @@ function AddQuot() {
   const [quotationId, setQuotationId] = useState("");
   const [clientid, setClientid] = useState("");
   const [itemsAdded, setItemsAdded] = useState([]);
+  let total = 0;
 
   const navigate = useNavigate();
 
@@ -44,6 +45,7 @@ function AddQuot() {
         quotation_id: quotationId,
         revised_no: 0,
         revised_no_quotation: 0,
+        total_quantity_price: formData.quantity * formData.unit_price,
       },
     })
       .then((resp) => {
@@ -88,7 +90,6 @@ function AddQuot() {
   };
 
   useEffect(() => {
-    console.log(id);
     axios({
       method: "post",
       url: "http://localhost:8080/get-quotation-user",
@@ -207,18 +208,31 @@ function AddQuot() {
           </tr>
         </thead>
         <tbody>
-          {itemsAdded.map((itemData, index) => (
-            <tr key={index}>
-              <td>{itemData.item_description}</td>
-              <td>{itemData.item_description}</td>
-              <td>{itemData.model_no}</td>
-              <td>{itemData.hsn_code}</td>
-              <td>{itemData.id}</td>
-              <td>{itemData.item_description}</td>
-              <td>{itemData.item_description}</td>
-              <td>{itemData.item_description}</td>
-            </tr>
-          ))}
+          {itemsAdded.map((itemData, index) => {
+            total += parseInt(itemData.total_quantity_price);
+            return (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{itemData.item_description}</td>
+                <td>{itemData.model_no}</td>
+                <td>{itemData.hsn_code}</td>
+                <td>{itemData.id}</td>
+                <td>{itemData.quantity}</td>
+                <td>{itemData.unit_price}</td>
+                <td>{itemData.total_quantity_price}</td>
+              </tr>
+            );
+          })}
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{total}</td>
+          </tr>
         </tbody>
       </table>
       <Link to={`/notes-add/${id}`}>

@@ -4,65 +4,65 @@ tfoot,
 th,
 thead,
 tr {
-    border: 1px solid #cecece;
+  border: 1px solid #cecece;
 }
 
 table {
-    width: 100%;
+  width: 100%;
 }
 
 td,
 th {
-    padding: 10px;
-    width: 70%;
+  padding: 10px;
+  /* width: 70%; */
 }
 
 .wrapper {
-    width: 80%;
-    margin: 3rem auto;
+  width: 80%;
+  margin: 3rem auto;
 }
 
 input {
-    width: 100%;
+  width: 100%;
 }
 
 .quotation-details {
-    width: 80%;
-    margin: 5rem auto;
+  width: 80%;
+  margin: 5rem auto;
 }
 
 .quotation-form {
-    width: 80%;
-    text-align: center;
-    margin: auto;
+  width: 80%;
+  text-align: center;
+  margin: auto;
 }
 
 .quotation-btn {
-    display: block;
-    width: 50%;
-    margin: 2rem auto;
+  display: block;
+  width: 50%;
+  margin: 2rem auto;
 }
 
 .title {
-    text-align: left !important;
-    margin: 1rem auto;
+  text-align: left !important;
+  margin: 1rem auto;
 }
 
 .create-quote {
-    font-weight: 400;
-    background-color: #31D2F2;
-    border: none;
-    padding: 10px 15px;
-    margin: auto;
-    border-radius: 8px;
-    transition: 0.3s;
+  font-weight: 400;
+  background-color: #31d2f2;
+  border: none;
+  padding: 10px 15px;
+  margin: auto;
+  border-radius: 8px;
+  transition: 0.3s;
 }
 
 .create-quote:hover {
-    background-color: #24a5be;
-    transition: 0.3s;
+  background-color: #24a5be;
+  transition: 0.3s;
 }
 
 .button-wrap {
-    text-align: center;
+  text-align: center;
 }
