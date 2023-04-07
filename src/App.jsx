@@ -34,15 +34,12 @@ function App() {
             element={<TermsAndConditionns />}
             path="/terms-conditions/:id"
           ></Route>
-<<<<<<< HEAD
           <Route element={<OriginalRevise />} path="/original"></Route>
           <Route element={<Revised />} path="/revised"></Route>
           <Route element={<Invoices />} path="/invoices"></Route>
           <Route element={<Reports />} path="/reports"></Route>
-=======
           <Route element={<OrderInvoice />} path="/original-print/:id"></Route>
           {/* <Route element={<OrderInvoice />} path="/order-invoice"></Route> */}
->>>>>>> 07-04-2023
         </Routes >
       </BrowserRouter >
     </>
