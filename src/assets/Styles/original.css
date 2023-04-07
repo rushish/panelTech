@@ -1,0 +1,21 @@
+.revise-wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.revise-wrapper button {
+    margin: 2rem auto;
+}
+
+.original-table {
+    margin: 2rem auto;
+}
+
+.edit-btn,
+.edit-btn:hover {
+    background: transparent;
+    border: none;
+    margin: auto !important;
+    padding: 0;
+    color: black;
+}

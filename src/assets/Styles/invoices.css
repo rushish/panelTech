@@ -1,0 +1,19 @@
+.invoice-wrapper {
+    width: 85%;
+    margin: auto;
+    margin: 3rem auto;
+}
+
+.listed-table td,
+th {
+    width: max-content;
+}
+
+.listed {
+    margin: 2rem auto;
+}
+
+.update-btn {
+    width: 20%;
+    margin: 3rem auto;
+}

@@ -9,6 +9,12 @@ import NotesAdd from "./Pages/NotesAdd";
 import AddQuot from "./Pages/AddQuot";
 import TermsAndConditionns from "./Pages/TermsAndConditionns";
 
+import OriginalRevise from "./Pages/OriginalRevise";
+import Revised from "./Pages/Revised";
+import Invoices from "./Pages/invoices";
+import Reports from "./Pages/reports";
+import OrderInvoice from "./Pages/OrderInvoice";
+
 function App() {
   return (
     <>
@@ -28,8 +34,14 @@ function App() {
             element={<TermsAndConditionns />}
             path="/terms-conditions/:id"
           ></Route>
-        </Routes>
-      </BrowserRouter>
+          <Route element={<OriginalRevise />} path="/original"></Route>
+          <Route element={<Revised />} path="/revised"></Route>
+          <Route element={<Invoices />} path="/invoices"></Route>
+          <Route element={<Reports />} path="/reports"></Route>
+          <Route element={<OrderInvoice />} path="/original-print/:id"></Route>
+          {/* <Route element={<OrderInvoice />} path="/order-invoice"></Route> */}
+        </Routes >
+      </BrowserRouter >
     </>
   );
 }
