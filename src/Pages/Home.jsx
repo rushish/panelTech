@@ -10,8 +10,9 @@ const Home = () => {
             <div className="cards-wrapper">
                 <Link className="card" to="/add-clients">Add Clients</Link>
                 <Link className="card" to="/manage-clients">Manage Clients</Link>
-                <Link className="card" to="#">Edit Original Quotations</Link>
-                <Link className="card" to="#">Revise Quotations</Link>
+                <Link className="card" to="/original">Edit Original Quotations</Link>
+                <Link className="card" to="/revised">Revise Quotations</Link>
+                <Link className="card" to="/reports">Reports</Link>
                 <Link className="card" to="#">Print Invoice</Link>
                 <Link className="card" to="#">OAS</Link>
             </div>
