@@ -8,14 +8,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NotesAdd from "./Pages/NotesAdd";
 import AddQuot from "./Pages/AddQuot";
 import TermsAndConditionns from "./Pages/TermsAndConditionns";
-<<<<<<< HEAD
+
 import OriginalRevise from "./Pages/OriginalRevise";
 import Revised from "./Pages/Revised";
 import Invoices from "./Pages/invoices";
 import Reports from "./Pages/reports";
-=======
 import OrderInvoice from "./Pages/OrderInvoice";
->>>>>>> 07-04-2023
 
 function App() {
   return (
@@ -45,8 +43,8 @@ function App() {
           <Route element={<OrderInvoice />} path="/original-print/:id"></Route>
           {/* <Route element={<OrderInvoice />} path="/order-invoice"></Route> */}
 >>>>>>> 07-04-2023
-        </Routes>
-      </BrowserRouter>
+        </Routes >
+      </BrowserRouter >
     </>
   );
 }
