@@ -69,11 +69,9 @@ const TermsAndConditionns = () => {
         .then((resp) => {
           console.log(resp);
           alert("Done !!!!");
-<<<<<<< HEAD
           window.location.href = "/"
-=======
           navigate(`/original-print/${id}`);
->>>>>>> 07-04-2023
+
         })
         .catch((err) => console.log(err));
     } else {
